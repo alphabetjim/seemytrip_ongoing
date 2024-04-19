@@ -1,0 +1,83 @@
+[
+{
+    "model": "trips.trip",
+    "pk": 2,
+    "fields": {
+        "name": "Scotland's North Coast 500",
+        "planner": 1,
+        "excerpt": "",
+        "itinerary": "Following the North coast road around Scotland, and taking in the sights. Hopefully will get to try some nice whisky!\r\n\r\nI've heard great things about this tour.",
+        "region": 0,
+        "accomm_type": 2,
+        "interests": "Hiking, Food, Stargazing",
+        "startDate": "2024-03-08",
+        "endDate": "2024-03-25",
+        "trip_photo": "media/tripImages/North_Coast_500_lysquy",
+        "created_on": "2024-03-15T19:26:33.480Z",
+        "updated_on": "2024-03-20T20:45:42.685Z",
+        "followers": [
+            8
+        ]
+    }
+},
+{
+    "model": "trips.trip",
+    "pk": 8,
+    "fields": {
+        "name": "Gareth",
+        "planner": 8,
+        "excerpt": "",
+        "itinerary": "Bike around Scotland edited",
+        "region": 0,
+        "accomm_type": 0,
+        "interests": "Scenic routes only avoiding motoprways whenb possible",
+        "startDate": "2024-06-01",
+        "endDate": "2024-06-15",
+        "trip_photo": "media/tripImages/animal_bbozug",
+        "created_on": "2024-03-18T09:58:17.910Z",
+        "updated_on": "2024-03-18T09:58:56.847Z",
+        "followers": [
+            1,
+            8
+        ]
+    }
+},
+{
+    "model": "trips.trip",
+    "pk": 9,
+    "fields": {
+        "name": "Nile cruise",
+        "planner": 1,
+        "excerpt": "A cruise along Egypt's river Nile",
+        "itinerary": "Embark on a mesmerizing Nile cruise journey starting from Luxor. Explore the majestic temples of Karnak and Luxor. Sail to Edfu to visit the well-preserved Temple of Horus, then to Kom Ombo to witness the unique dual temples dedicated to Sobek and Haroeris. Continue to Aswan, where the Philae Temple and the High Dam await. Arrange optional excursions to Abu Simbel. Finally, enjoy the serene beauty of the Nile aboard the cruise ship as it returns to Luxor, taking in the timeless landscapes and ancient wonders along the way.",
+        "region": 6,
+        "accomm_type": 3,
+        "interests": "History, Agatha Christie",
+        "startDate": "2024-03-06",
+        "endDate": "2024-03-13",
+        "trip_photo": "media/tripImages/Nile_Cruise_R01_ty9tio",
+        "created_on": "2024-03-19T19:59:14.596Z",
+        "updated_on": "2024-03-22T13:34:42.352Z",
+        "followers": []
+    }
+},
+{
+    "model": "trips.trip",
+    "pk": 12,
+    "fields": {
+        "name": "Route 66",
+        "planner": 14,
+        "excerpt": "Road trip along Route 66",
+        "itinerary": "Day 1: Start in Chicago, IL. Visit Millennium Park and the Art Institute. Drive to Joliet, IL (1 hour) for a taste of the historic Route 66.\r\nDay 2: Drive to Springfield, IL (2.5 hours). Visit Abraham Lincoln's home and the Old State Capitol.\r\nDay 3: Continue to St. Louis, MO (2 hours). Explore the Gateway Arch and the City Museum.\r\nDay 4: Drive to Meramec Caverns, MO (1.5 hours). Take a tour of the stunning caves.\r\nDay 5: Head to Lebanon, MO (2 hours). Stop by the Route 66 Museum and Munger Moss Motel.\r\nDay 6: Drive to Tulsa, OK (3 hours). Visit the Philbrook Museum of Art and the Tulsa Zoo.\r\nDay 7: Continue to Oklahoma City, OK (2 hours). Explore the National Cowboy & Western Heritage Museum and Bricktown.\r\nDay 8: Drive to Amarillo, TX (4 hours). See the Cadillac Ranch and have a meal at the Big Texan Steak Ranch.\r\nDay 9: Visit Palo Duro Canyon State Park, TX (1 hour). Enjoy hiking and scenic views.\r\nDay 10: Drive to Albuquerque, NM (4 hours). Visit Old Town and the Albuquerque Museum.\r\nDay 11: Head to Petrified Forest National Park, AZ (3.5 hours). Explore the ancient petrified trees.\r\nDay 12: Drive to Grand Canyon National Park, AZ (2.5 hours). Spend the day marveling at the breathtaking views.\r\nDay 13: Continue to Kingman, AZ (2.5 hours). Visit the Route 66 Museum and the Powerhouse Visitor Center.\r\nDay 14: Drive to Santa Monica, CA (4 hours). Reach the end of Route 66 and enjoy the iconic Santa Monica Pier.",
+        "region": 4,
+        "accomm_type": 2,
+        "interests": "History, Nature, Adventure, Culture, Food",
+        "startDate": "2024-06-28",
+        "endDate": "2024-07-13",
+        "trip_photo": "media/tripImages/Historic_Route_66_ic5c6b",
+        "created_on": "2024-03-22T13:22:27.149Z",
+        "updated_on": "2024-03-22T14:36:16.116Z",
+        "followers": []
+    }
+}
+]

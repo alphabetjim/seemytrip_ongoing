@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="home-background">
+        <div class="content-background-colour home-content-container text-center">
+            <!-- <div class="home-content text-center"> -->
+                
+                <h1>Welcome, Trailblazer!</h1>
+                <div class="homepage-links">
+                    <!-- <div class="row"> -->
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'view_traveller' %}">
+                            <div class="homepage-link">
+                                View Profile
+                            </div>
+                        </a>
+                        <a href="{% url 'create_trip' %}">
+                            <div class="homepage-link">
+                                Plan Adventure
+                            </div>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'account_login' %}">
+                            <div class="homepage-link">
+                                Log in
+                            </div>
+                        </a>
+                        <a href="{% url 'account_signup' %}">
+                            <div class="homepage-link">
+                                Start your adventure
+                            </div>
+                        </a>
+                    {% endif %}
+                    <!-- </div> -->
+                    <!-- <div class="row"> -->
+                        <a href="{% url 'triplist' %}">
+                            <div class="homepage-link">
+                                Trips
+                            </div>
+                        </a>
+                        <a href="{% url 'travellerlist' %}">
+                            <div class="homepage-link">
+                                Voyagers
+                            </div>
+                        </a>
+                    <!-- </div> -->
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block copyright %}
+Copyright 
+<br> James Bridgwater Court 2024
+<br> <a href="https://github.com/alphabetjim">
+    <i class="fa-brands fa-github"></i>
+</a>
+{% endblock %}

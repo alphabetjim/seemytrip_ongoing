@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="content-background-colour content-container">
+    <h1>Voyagers</h1>
+    <div class="row justify-content-center g-0">
+        {% for traveller in queryset %}
+        <div class="col-12 col-md-5 travellerlistitem">
+            <a href="{% url 'travellerprofile' traveller.pk %}" class="trip-link">
+                <h3>{{traveller.firstname}} {{traveller.lastname}}</h3>
+            </a>
+            <div class="row g-0">
+                <div class="col-6 image-div">
+                    {% if traveller.profile_photo.url == "" %}
+                    <img src="{% static 'images/nobody.webp' %}" alt="placeholder image">
+                    {% else %}
+                    <img class="object-fit-contain" src=" {{ traveller.profile_photo.url }}"
+                        alt="{{ traveller.firstname }} {{ traveller.lastname}}">
+                    {% endif %}
+                </div>
+                <div class="col-6 travellerinfo-div">
+                    <div class="bio">
+                        <h5>About</h5>
+                        <p>{{ traveller.bio }}</p>
+                    </div>
+                    <div class="tripsPlanned">
+                        {% if traveller.trips_planned.count == 0 %}
+                        <p>No trips planned yet.</p>
+                        {% else %}
+                        <h5>Trips Planned:</h5>
+                        {% for trip in traveller.trips_planned.all %}
+                        <a href="{% url 'tripdetail' trip.pk %}" class="trip-link">
+                            <p><strong><i class="fa-solid fa-road"></i> 
+                                {{ trip.name }} in {{ trip.get_region_display }}</strong></p>
+                        </a>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock content %}

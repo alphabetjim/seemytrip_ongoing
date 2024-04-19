@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content-background-colour content-container triplistcontent">
+    <h1>Trips Planned</h1>
+    <div class="row justify-content-center">
+        {% for trip in queryset %}
+        <div class="col-12 col-lg-5 triplistitem">
+            <div class="row justify-content-center g-0">
+                <a href="{% url 'tripdetail' trip.pk %}" class="trip-link">
+                    <h3>{{ trip.name }}</h3>
+                </a>
+                <div class="col-12 col-md-6 col-lg-12">
+                    <div class="image-div">
+                        {% if trip.trip_photo.url == "" %}
+                            <img class="triplistitem-image" src="{% static 'images/nobody.webp' %}"
+                                alt="placeholder image">
+                        {% else %}
+                            <img class="triplistitem-image" src=" {{ trip.trip_photo.url }}" 
+                            alt="{{ trip.name}}">
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-12 info-div">
+                    <div class="row w-100 tripinfo-row">
+                        <div class="col-6 flex-fill">
+                            <p class="tripInfoType-p"><strong>Planner</strong></p>
+                        </div>
+                        <div class="col-6 flex-fill">
+                            <p class="tripInfoValue-p">{{ trip.planner.firstname }} {{ trip.planner.lastname }}</p>
+                        </div>
+                    </div>
+                    <div class="row w-100 tripinfo-row">
+                        <div class="col-6 flex-fill">
+                            <p class="tripInfoType-p"><strong>Status</strong></p>
+                        </div>
+                        <div class="col-6 flex-fill">
+                            <p>{% if trip.passed %}
+                                    Completed
+                                {% elif trip.upcoming %}
+                                    Upcoming
+                                {% else %}
+                                    Underway
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    {% if trip.get_accomm_type_display|length > 0 %}
+                        <div class="row w-100 tripinfo-row">
+                            <div class="col-6 flex-fill">
+                                <p class="tripInfoType-p"><strong>Accommodation</strong></p>
+                            </div>
+                            <div class="col-6 flex-fill">
+                                <p>{{ trip.get_accomm_type_display }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if trip.get_region_display|length > 0 %}
+                        <div class="row w-100 tripinfo-row">
+                            <div class="col-6 flex-fill">
+                                <p class="tripInfoType-p"><strong>Region</strong></p>
+                            </div>
+                            <div class="col-6 flex-fill">
+                                <p>{{ trip.get_region_display }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if trip.interests|length > 0 %}
+                        <div class="row w-100 tripinfo-row">
+                            <div class="col-6 flex-fill">
+                                <p class="tripInfoType-p"><strong>Interests</strong></p>
+                            </div>
+                            <div class="col-6 flex-fill">
+                                <p>{{ trip.interests }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if trip.excerpt|length > 0 %}
+                        <div class="row w-100 tripinfo-row">
+                            <div class="col-6 flex-fill">
+                                <p class="tripInfoType-p"><strong>Summary</strong></p>
+                            </div>
+                            <div class="col-6 flex-fill">
+                                <p>{{ trip.excerpt }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="row w-100 tripinfo-row">
+                        <div class="col-6 flex-fill text-center">
+                            <p class='text-center'><strong>
+                                {% if trip.followers.count == 0 %}
+                                    {% if trip.planner.user != user %}
+                                        Be the first to follow this trip!
+                                    {% endif %}
+                                {% else %}
+                                    {{ trip.followers.count }} Following:
+                                {% endif %}
+                            </strong></p>
+                        </div>
+                        <div class="col-6 flex-fill 
+                            {% if trip.followers.count == 0 %}d-none{%endif%}">
+                            <p class="followersP" id="followers_{{trip.pk}}">
+                                {% for follower in trip.followers.all %}
+                                    {{ follower.username }} 
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if user.is_authenticated %}
+                {% if trip.planner.user != user %}
+                    <div class="row w-100 triplist-followbuttonrow">
+                        <div class="col-6 flex-fill text-center followbuttondiv">
+                            <a class="link-follow" id="{{trip.pk}}" href="{% url 'follow_trip' trip.pk %}">
+                                Follow
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<!-- Script to adapt follow button display -->
+<script src="{% static 'js/followButtonUpdate.js' %}"></script>
+{% endblock %}

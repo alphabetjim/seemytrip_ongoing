@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% for tripcomment in queryset %}
+
+    <p><strong>{{ tripcomment.author }}</strong> on 
+        <span>
+            <a href="{% url 'tripdetail' tripcomment.trip.pk %}" class="trip-link">
+                <strong>{{ tripcomment.trip.name }}</strong>
+            </a>
+        </span>
+        <br>
+        <small>{{ tripcomment.created_on }}</small></p>
+
+    <p>{{ tripcomment.body | linebreaks }} </p>
+
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,82 @@
+[
+{
+    "model": "trips.tripday",
+    "pk": 1,
+    "fields": {
+        "title": "First Leg",
+        "trip": 2,
+        "author": 1,
+        "excerpt": "",
+        "locations": "",
+        "body": "Started from wherever you start from, and got cracking. Exciting! Hopefully the weather will hold.",
+        "day_photo": "media/tripDayImages/DALLE_2024-03-06_16_xuvpjo",
+        "created_on": "2024-03-20T16:42:24.076Z",
+        "updated_on": "2024-03-20T17:21:41.784Z",
+        "day_date": "2024-03-20"
+    }
+},
+{
+    "model": "trips.tripday",
+    "pk": 3,
+    "fields": {
+        "title": "Second Day",
+        "trip": 2,
+        "author": 1,
+        "excerpt": "",
+        "locations": "",
+        "body": "Got started bright and early this morning, heading on along the coast.",
+        "day_photo": "media/tripDayImages/sun_psfrih",
+        "created_on": "2024-03-20T17:30:47.933Z",
+        "updated_on": "2024-03-20T17:30:47.933Z",
+        "day_date": "2024-03-21"
+    }
+},
+{
+    "model": "trips.tripday",
+    "pk": 4,
+    "fields": {
+        "title": "Third day",
+        "trip": 2,
+        "author": 1,
+        "excerpt": "Day around Alness",
+        "locations": "Alness",
+        "body": "Explored Alness and took some photos of the sea.",
+        "day_photo": "media/tripDayImages/mist_vdxurq",
+        "created_on": "2024-03-21T10:09:39.631Z",
+        "updated_on": "2024-03-21T10:09:39.631Z",
+        "day_date": "2024-03-22"
+    }
+},
+{
+    "model": "trips.tripday",
+    "pk": 6,
+    "fields": {
+        "title": "second day",
+        "trip": 8,
+        "author": 8,
+        "excerpt": "",
+        "locations": "Loch ness",
+        "body": "asfasjl",
+        "day_photo": "media/tripDayImages/aylaimage_b9pzve",
+        "created_on": "2024-03-21T12:09:21.149Z",
+        "updated_on": "2024-03-21T12:09:21.149Z",
+        "day_date": "2024-03-21"
+    }
+},
+{
+    "model": "trips.tripday",
+    "pk": 7,
+    "fields": {
+        "title": "Day 1",
+        "trip": 9,
+        "author": 1,
+        "excerpt": "Luxor to Edfu",
+        "locations": "Karnak, Luxor Temples",
+        "body": "Embarked from Luxor. Explored Karnak and Luxor Temples, marveling at their grandeur and intricate carvings. Enjoyed the scenic sail along the Nile towards Edfu, soaking in the tranquility and timeless beauty of the river. Excited for what lies ahead at Edfu Temple.",
+        "day_photo": "media/tripDayImages/Luxor__Egypt__Karnak__Great_Hypostyle_Hall__Columns_2_lggyao",
+        "created_on": "2024-03-22T13:41:06.795Z",
+        "updated_on": "2024-03-22T13:41:06.795Z",
+        "day_date": "2024-03-06"
+    }
+}
+]

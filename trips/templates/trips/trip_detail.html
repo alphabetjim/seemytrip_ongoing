@@ -1,0 +1,255 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!-- <div class=""> -->
+    <div class="tripdetail-content content-background-colour content-container">
+        <h1>{{ trip.name }}</h1>
+        <h3>Planned by <a href="{% url 'travellerprofile' trip.planner.pk %}" class="trip-link">
+            {{trip.planner.firstname}} {{trip.planner.lastname}}
+        </a></h3>   
+        <div class="row">
+            <div class="col-12">
+                <div class="image-detail-div">
+                    {% if trip.trip_photo.url == "" %}
+                        <img class="trip-image" src="{% static 'images/nobody.webp' %}"
+                            alt="placeholder image">
+                    {% else %}
+                        <img class="trip-image" src=" {{ trip.trip_photo.url }}" 
+                            alt="{{ trip.name}}">
+                    {% endif %}
+                </div>
+                <div class="info-div">
+                    <div class="row w-100 tripinfo-row">
+                        <div class="col-6 flex-fill">
+                            <p class="tripInfoType-p"><strong>From</strong></p>
+                        </div>
+                        <div class="col-6 flex-fill">
+                            <p>{{ trip.startDate }}</p>
+                        </div>
+                    </div>
+                    <div class="row w-100 tripinfo-row">
+                        <div class="col-6 flex-fill">
+                            <p class="tripInfoType-p"><strong>To</strong></p>
+                        </div>
+                        <div class="col-6 flex-fill">
+                            <p>{{ trip.endDate }}</p>
+                        </div>
+                    </div>
+                    <div class="row w-100 tripinfo-row">
+                        <div class="col-6 flex-fill">
+                            <p class="tripInfoType-p"><strong>Status</strong></p>
+                        </div>
+                        <div class="col-6 flex-fill">
+                            <p>{% if trip.passed %}
+                                    Completed
+                                {% elif trip.upcoming %}
+                                    Upcoming
+                                {% else %}
+                                    Underway
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    {% if trip.get_accomm_type_display|length > 0 %}
+                        <div class="row w-100 tripinfo-row">
+                            <div class="col-6 flex-fill">
+                                <p class="tripInfoType-p"><strong>Accommodation</strong></p>
+                            </div>
+                            <div class="col-6 flex-fill">
+                                <p>{{ trip.get_accomm_type_display }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if trip.get_region_display|length > 0 %}
+                        <div class="row w-100 tripinfo-row">
+                            <div class="col-6 flex-fill">
+                                <p class="tripInfoType-p"><strong>Region</strong></p>
+                            </div>
+                            <div class="col-6 flex-fill">
+                                <p>{{ trip.get_region_display }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if trip.interests|length > 0 %}
+                        <div class="row w-100 tripinfo-row">
+                            <div class="col-6 flex-fill">
+                                <p class="tripInfoType-p"><strong>Interests</strong></p>
+                            </div>
+                            <div class="col-6 flex-fill">
+                                <p>{{ trip.interests }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="follow row w-100 tripinfo-row">
+                        <div class="col-6 flex-fill">
+                            <p class="tripInfoType-p"><strong>
+                                {% if trip.followers.count == 0 %}
+                                    Be the first to follow this trip!
+                                {% else %}
+                                    {{ trip.followers.count }} Following:
+                                {% endif %}
+                            </strong></p>
+                        </div>
+                        <div class="col-6 flex-fill 
+                            {% if trip.followers.count == 0 %}d-none{%endif%}">
+                            <p class="followersP" id="followers_{{trip.pk}}">
+                                {% for follower in trip.followers.all %}
+                                    {{ follower.username }} 
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row w-100 tripdetail-itinerary">
+                        <h4>Itinerary</h4>
+                        <div>
+                            {{ trip.itinerary | linebreaks }}
+                        </div>
+                    </div>
+                    <br>
+                    <h4 class="journal-heading">Journal</h4>
+                    <div class="row tripjournal justify-content-center">
+                        
+                        {% if trip.journal_entries.count == 0 %}
+                            <div class="col-6 justify-content-center">
+                                <p><strong>No journal entries yet for this trip</strong></p>
+                            </div>    
+                        {% else %}
+                            {% for entry in trip.journal_entries.all %}
+                            <div class="col-6 text-center journal-entry">
+                                <a href="{% url 'trip_day' entry.trip.pk entry.pk %}">
+                                    <p><strong>{{ entry.title }}</strong></p>
+                                </a>
+                                <p>{{ entry.excerpt }}</p>
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    {% if user.is_authenticated %}
+                        {% if trip.planner.user != user %}
+                            <div class="row w-100 triplist-followbuttonrow">
+                                <div class="col-6 flex-fill text-center followbuttondiv">
+                                    <a class="link-follow" id="{{trip.pk}}" href="{% url 'follow_trip' trip.pk %}">
+                                        Follow
+                                    </a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% if trip.planner.user == user %}
+        <div class="row justify-content-center g-0">
+            <div class="col-12 col-md-6 text-center linkcontainer">
+                <a href="{% url 'create_trip_day' trip.pk %}" class="tripday-link backlink">
+                    Add Journal Entry
+                </a>
+            </div>
+            <div class="col-12 col-md-6 justify-content-center text-center linkcontainer">
+                <a href="{% url 'edit_trip' trip.pk %}" class ="backlink">
+                    Edit or Delete Trip
+                </a>               
+            </div>
+        </div>
+        {% endif %}
+        <div class="row justify-content-center g-0">
+            <div class="col-12 col-md-6 text-center linkcontainer">
+                <a href="{% url 'triplist' %}" class="tripday-link backlink">
+                    Back to Trips
+                </a>
+            </div>
+        </div>
+        <div class="row trip-comments">
+            <!-- Creating New Comments -->
+            <div class="col-md-4 card mb-4 mt-3 commentBox">
+                <div class="card-body">
+                    {% if user.is_authenticated %}
+                    <h3>Leave a comment:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form id="tripcommentForm" method="post"
+                    style="margin-top: 1.3em;">
+                    {{ tripcomment_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit"
+                        class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+                    {% else %}
+                    <p><a href="{% url 'account_login' %}">Log in</a> to leave a comment</p>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- Displaying Trip Comments -->
+            <div class="col-md-8 card mb-4  mt-3 comments-div">
+                <h3>Comments:</h3>
+                <div class="card-body">
+                <!-- We want a for loop inside the empty control tags
+                    to iterate through each comment in comments -->
+                {% for comment in tripcomments %}
+                    <div class="p-2 comments
+                        {% if not comment.approved and comment.author == user %}
+                        faded{% elif not comment.approved %} d-none{% endif %}">
+                        <p class="font-weight-bold">
+                        {{ comment.author }}
+                        <span class="font-weight-normal">
+                            {{ comment.created_on }}
+                        </span> wrote:
+                        </p>
+                        <div id="comment{{ comment.id }}">
+                        {{ comment.body | linebreaks }}
+                        </div>
+                        {% if not comment.approved and comment.author == user %}
+                            <p class="approval">This comment is awaiting approval.</p>
+                        {% endif %}
+                        {% if user.is_authenticated and comment.author == user %}
+                        <button class="btn btn-edit"
+                        id="edit_{{ comment.id }}">Edit</button>
+                        <button class="btn btn-delete"
+                        id="delete_{{ comment.id }}">Delete</button>
+                    {% endif %}
+                    </div>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+  <!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1"
+    aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title"
+                id="deleteModalLabel">Delete comment?</h5>
+            <button type="button" class="btn-close"
+                data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            Are you sure you want to delete your comment?
+            This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+                data-bs-dismiss="modal">Close</button>
+            <a id="deleteConfirm" href="#" class="btn
+                btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<!-- Script for comment edit/delete functionality -->
+<script src="{% static 'js/tripcomments.js' %}"></script>
+{% if user.is_authenticated %}
+    {% if trip.planner.user != user %}
+        <!-- Script for follow button display update -->
+        <script src="{% static 'js/followButtonUpdate.js' %}"></script>
+    {% endif %}
+{% endif %}
+{% endblock scripts%}

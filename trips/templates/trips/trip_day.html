@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="tripdetail-content content-background-colour content-container">
+    <h1>{{ trip_day.title }}</h1>
+    <h2><a href="{% url 'tripdetail' trip_day.trip.pk %}" class="trip-link">
+        {{ trip_day.trip.name }}
+    </a></h2>
+    <h3><a href="{% url 'travellerprofile' trip_day.author.pk %}" class="trip-link">
+        {{trip_day.author.firstname}} {{trip_day.author.lastname}}
+    </a></h3> 
+    <h4>{{ trip_day.day_date }}</h4>  
+    <h5>{{ trip_day.locations }}</h5>  
+    <div class="row">
+        <div class="col-12 justify-content-center">
+            <div class="tripday-image-div">
+                {% if trip_day.day_photo.url == "" %}
+                    <img src="{% static 'images/nobody.webp' %}"
+                        alt="placeholder image">
+                {% else %}
+                    <img src=" {{ trip_day.day_photo.url }}" 
+                        alt="{{ trip_day.title}}">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="tripday-body">
+        <div>
+            {{ trip_day.body|linebreaks }}
+        </div>
+    </div>
+    {% if trip_day.author.user == user %}
+    <div class="row">
+        <div class="col-12 col-md-6 text-center tripday-link">
+            <a href="{% url 'create_trip_day' trip_day.trip.pk %}">
+                Add Another Journal Entry
+            </a>
+        </div>
+        <div class="col-12 col-md-6 text-center tripday-link">
+            <a href="{% url 'edit_trip_day' trip_day.trip.pk trip_day.pk %}">
+                Edit or Delete Journal Entry
+            </a>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row justify-content-center g-0 mb-4">
+        <div class="col-12 col-md-6 text-center linkcontainer">
+            <a href="{% url 'tripdetail' trip_day.trip.pk %}" class="tripday-link backlink">
+                Back to Trip
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+[
+{
+    "model": "travellerprofile.traveller",
+    "pk": 1,
+    "fields": {
+        "firstname": "Edwin",
+        "lastname": "The Voyager",
+        "bio": "Seasoned roadtripper, planning more",
+        "profile_photo": "media/profileImages/sun_wvru1l",
+        "created_on": "2024-03-13T15:45:29.387Z",
+        "updated_on": "2024-03-20T10:01:26.717Z"
+    }
+},
+{
+    "model": "travellerprofile.traveller",
+    "pk": 8,
+    "fields": {
+        "firstname": "Gareth",
+        "lastname": "McGirr",
+        "bio": "dsffsd edited",
+        "profile_photo": "media/profileImages/yamaha-r15_thntdz",
+        "created_on": "2024-03-18T09:50:03.238Z",
+        "updated_on": "2024-03-21T12:06:06.142Z"
+    }
+},
+{
+    "model": "travellerprofile.traveller",
+    "pk": 14,
+    "fields": {
+        "firstname": "Sol",
+        "lastname": "Mastersson",
+        "bio": "Keen tourer. I enjoy nothing more than getting on the road and seeing some sights.",
+        "profile_photo": "media/profileImages/sun_prl63s",
+        "created_on": "2024-03-22T13:17:45.404Z",
+        "updated_on": "2024-03-22T13:17:45.404Z"
+    }
+}
+]
