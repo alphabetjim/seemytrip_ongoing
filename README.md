@@ -213,4 +213,23 @@ Favicon image photo by [Jack Ward]("https://unsplash.com/@jackward?utm_content=c
 Error page photo by [Nico Smit]("https://unsplash.com/@nicosmit99?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash") on [Unsplash]("https://unsplash.com/photos/a-yellow-road-closed-sign-sitting-on-the-side-of-a-road-MWKQ8jsnid0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash")
   
 Home page background photo by [Z]("https://unsplash.com/@dead____artist?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash") on [Unsplash]("https://unsplash.com/photos/world-map-with-pins-TrhLCn1abMU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash").
-    
+
+### Profile, Trip Photos for Generated content
+Photos sourced from [Pexels](https://www.pexels.com/). 
+Photographers:
+- Liam Smith profile photo: [Suliman Sallehi](https://www.pexels.com/photo/person-holding-camera-1704488/)
+- Olivia Johnson: [George Dolgikh](https://www.pexels.com/photo/woman-taking-selfie-while-smiling-1310522/)
+- Noah Williams: [Pixabay](https://www.pexels.com/photo/forced-perspective-selective-focus-photography-of-man-inside-the-ball-220429/)
+- Ava Brown: [Pixabay](https://www.pexels.com/photo/woman-wearing-black-spaghetti-strap-top-415829/)
+- William Davis: [Mohamed Abdelghaffar](https://www.pexels.com/photo/man-in-black-jacket-771742/)
+- Isabella Martinez: [Tony James-Andersson](https://www.pexels.com/photo/looking-up-woman-wearing-blue-v-neck-top-1674752/)
+- Northern lights expedition: [Tobias Bjørkli](https://www.pexels.com/photo/aurora-borealis-1562058/)
+- Coastal California road trip: [Giona Mason](https://www.pexels.com/photo/golden-gate-bridge-in-san-francisco-19045721/)
+- Outback Adventure: [Jonas Schallenberg](https://www.pexels.com/photo/uluru-rock-formation-in-central-australia-6610368/)
+- Mediterranean Cruise:[Aleksandar Pasaric](https://www.pexels.com/photo/white-concrete-house-near-body-of-water-under-white-and-blue-cloudy-sky-1285625/)
+- Rocky Mountain Retreat: [Oliver Dohrn](https://www.pexels.com/photo/rocky-and-rough-mountain-range-21328031/)
+- European Grand Tour: [Travel Suisse](https://www.pexels.com/photo/snow-covered-mountain-near-body-of-water-2382317/)
+- Amazon Rainforest Expedition: [David Riaño Cortés](https://www.pexels.com/photo/rainforest-surrounded-by-fog-975771/)
+- Banff National Park Day: [Pixabay](https://www.pexels.com/photo/green-trees-near-body-of-water-533769/)
+- Jasper National Park Day: [Pixabay](https://www.pexels.com/photo/forest-near-body-of-water-533881/)
+- Yoho National Park Day: [Anthony Desrochers](https://www.pexels.com/photo/takakkaw-falls-under-cloudy-sky-3969563/)

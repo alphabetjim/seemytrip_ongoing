@@ -1,0 +1,111 @@
+[
+    {
+        "model": "travellerprofile.traveller",
+        "pk": 2,
+        "fields": {
+            "firstname": "Liam",
+            "lastname": "Smith",
+            "bio": "Liam is a nature enthusiast who dreams of going on a touring holiday to explore the breathtaking beauty of national parks and wilderness areas. He's passionate about outdoor adventures and capturing stunning landscapes with his camera.",
+            "profile_photo": "",
+            "created_on": "2024-03-22T17:30:00.238Z",
+            "updated_on": "2024-03-22T17:30:01.142Z"
+        }
+    },
+    {
+        "model": "travellerprofile.traveller",
+        "pk": 3,
+        "fields": {
+            "firstname": "Olivia",
+            "lastname": "Johnson",
+            "bio": "Olivia is a travel enthusiast who is eager to set sail on a cruise to explore exotic destinations and relax under the sun. She's excited about the prospect of indulging in gourmet dining, exploring vibrant ports of call, and enjoying onboard entertainment.",
+            "profile_photo": "",
+            "created_on": "2024-03-22T17:30:00.238Z",
+            "updated_on": "2024-03-22T17:30:01.142Z"
+        }
+    },
+    {
+        "model": "travellerprofile.traveller",
+        "pk": 4,
+        "fields": {
+            "firstname": "Noah",
+            "lastname": "Williams",
+            "bio": "Noah is a thrill-seeker who craves the adrenaline rush of embarking on a road trip through rugged terrain and remote destinations. He's eager to navigate challenging routes and camp under the stars, embracing the freedom of the open road.",
+            "profile_photo": "",
+            "created_on": "2024-03-22T17:30:00.238Z",
+            "updated_on": "2024-03-22T17:30:01.142Z"
+        }
+    },
+    {
+        "model": "travellerprofile.traveller",
+        "pk": 5,
+        "fields": {
+            "firstname": "Ava",
+            "lastname": "Brown",
+            "bio": "Ava is a history buff who is fascinated by ancient civilizations and archaeological wonders. She's planning a touring holiday to explore iconic landmarks and immerse herself in the rich cultural heritage of different countries.",
+            "profile_photo": "",
+            "created_on": "2024-03-22T17:30:00.238Z",
+            "updated_on": "2024-03-22T17:30:01.142Z"
+        }
+    },
+    {
+        "model": "travellerprofile.traveller",
+        "pk": 6,
+        "fields": {
+            "firstname": "William",
+            "lastname": "Davis",
+            "bio": "William is a photography enthusiast who is eager to embark on a road trip along scenic routes and picturesque landscapes. He's looking forward to capturing breathtaking sunsets, majestic mountains, and charming small towns with his camera.",
+            "profile_photo": "",
+            "created_on": "2024-03-22T17:30:00.238Z",
+            "updated_on": "2024-03-22T17:30:01.142Z"
+        }
+    },
+    {
+        "model": "travellerprofile.traveller",
+        "pk": 7,
+        "fields": {
+            "firstname": "Isabella",
+            "lastname": "Martinez",
+            "bio": "Isabella is a foodie who dreams of going on a culinary cruise to savor delicious cuisines from around the world. She's excited about exploring local markets, sampling authentic dishes, and learning about different cooking traditions.",
+            "profile_photo": "",
+            "created_on": "2024-03-22T17:30:00.238Z",
+            "updated_on": "2024-03-22T17:30:01.142Z"
+        }
+    },
+    {
+        "model": "travellerprofile.traveller",
+        "pk": 8,
+        "fields": {
+            "firstname": "James",
+            "lastname": "Garcia",
+            "bio": "James is an outdoor enthusiast who enjoys the freedom of the open road and the thrill of adventure. He's planning an epic road trip to explore off-the-beaten-path destinations, camp in remote wilderness areas, and reconnect with nature.",
+            "profile_photo": "",
+            "created_on": "2024-03-22T17:30:00.238Z",
+            "updated_on": "2024-03-22T17:30:01.142Z"
+        }
+    },
+    {
+        "model": "travellerprofile.traveller",
+        "pk": 9,
+        "fields": {
+            "firstname": "Sophia",
+            "lastname": "Rodriguez",
+            "bio": "Sophia is a travel enthusiast who is eager to embark on a touring holiday to explore charming villages, historical landmarks, and scenic countryside. She's looking forward to immersing herself in local cultures, trying traditional foods, and meeting friendly locals along the way.",
+            "profile_photo": "",
+            "created_on": "2024-03-22T17:30:00.238Z",
+            "updated_on": "2024-03-22T17:30:01.142Z"
+        }
+    },
+    {
+        "model": "travellerprofile.traveller",
+        "pk": 10,
+        "fields": {
+            "firstname": "Jackson",
+            "lastname": "Martinez",
+            "bio": "Jackson is an adventure seeker who is planning an adrenaline-fueled road trip through rugged terrain and challenging landscapes. He's looking forward to hiking in remote wilderness areas, rock climbing, and camping under the stars.",
+            "profile_photo": "",
+            "created_on": "2024-03-22T17:30:00.238Z",
+            "updated_on": "2024-03-22T17:30:01.142Z"
+        }
+    }
+]
+
