@@ -20,7 +20,7 @@ GitHub projects was used for the project board, which can be found [here](https:
 
 ![Project Board](docs/images/project_board.png)
 
-There are planned future features for the sight, including an AI trip planner and itinerary mapping for users. The full set of these can be found in the project backlog column of the project board.
+There are planned future features for the site, including an AI trip planner and itinerary mapping for users. The full set of these can be found in the project backlog column of the project board.
 
 ## Epics 
 The User Stories within this project can be split into several epics:
